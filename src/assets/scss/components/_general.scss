@@ -1,0 +1,15 @@
+#under-dev {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $level1;
+  background-color: get-color(warning);
+  text-align: center;
+  padding: 1em;
+  strong {
+    font-family: $header-font-family;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
