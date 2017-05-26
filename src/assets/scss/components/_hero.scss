@@ -1,0 +1,107 @@
+#hero {
+  position: relative;
+  background-color: rgba($black, 0.5);
+  height: 100vh;
+  padding-top: 25vh;
+  background: url("../img/hustle.jpg") center bottom no-repeat;
+  background-size: cover;
+
+  &::before,
+  &::after {
+  }
+
+  .container {
+    z-index: $level1;
+    perspective: 800px;
+  }
+
+  .featured-services {
+    height: $featured-height;
+    margin: $featured-height auto;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate-front 5000ms linear infinite;
+    transition: all 1500ms;
+    &:hover {
+      animation: none;
+    }
+    &__item {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      font-size: $featured-height/2;
+      padding-top: $featured-height/4;
+      background-color: get-color(warning);
+      border: 2px $white solid;
+      border-radius: 2px;
+      backface-visibility: hidden;
+      &:nth-child(1) {
+        transform: translateZ($featured-height/2);
+      }
+      &:nth-child(2) {
+        transform: translateY($featured-height/2) rotateX(-90deg);
+        background-color: $black;
+      }
+      &:nth-child(3) {
+        transform: translateZ(-$featured-height/2) rotateX(180deg);
+        background-color: get-color(alert);
+      }
+      &:nth-child(4) {
+        transform: translateY(-$featured-height/2) rotateX(90deg);
+        background-color: get-color(primary);
+      }
+    }
+  }
+}
+
+.scroll-down {
+  position: fixed;
+  bottom: 0;
+  left: calc(50vw - 55px / 2);
+  transform: rotateZ(90deg);
+  i {
+    &:before {
+      color: $white;
+    }
+  }
+}
+
+@keyframes rotate-front {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(-360deg);
+  }
+}
+
+@include breakpoint(medium) {
+  #hero {
+    position: relative;
+    background-color: rgba($black, 0.5);
+    height: 100vh;
+    padding-top: 25vh;
+    background-image: none;
+
+    &::before,
+    &::after{
+      position: absolute;
+      content: '';
+      z-index: $levelB;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &::before {
+      background: url("../img/hustle.jpg") no-repeat;
+      background-size: cover;
+      background-position: -50vw;
+    }
+
+    &::after {
+      background: url("../img/code.jpg") no-repeat;
+      background-size: cover;
+      background-position: 50vw;
+    }
+  }
+}
