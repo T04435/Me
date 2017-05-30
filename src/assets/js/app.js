@@ -5,7 +5,7 @@ const tthDataURL = `https://teamtreehouse.com/${tthUser}.json`;
 /**
  * badge HTML template
  * <div class="small-4 columns tth__badged">
- *   <div class="tth__badged--image"></div>// add BG image based on topic URL /assets/img/badges/TOPIC.png
+ *   <div class="tth__badged--image"></div>// add BG image based on topic URL ./assets/img/badges/TOPIC.png
  *   <div class="tth__badged--value">
  *     <p>VALUE</p>// add value
  *   </div>
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 <div class="tth__badged--title">
                   <h5>${topic}</h5>
                 </div>
-                <div class="tth__badged--image" style="background-image: url('/assets/img/badges/${topic.split(' ').join('_').toLowerCase()}.png')"></div>
+                <div class="tth__badged--image" style="background-image: url('./assets/img/badges/${topic.split(' ').join('_').toLowerCase()}.png')"></div>
                 <div class="tth__badged--value">
                   <p>${points} XP</p>
                 </div>
