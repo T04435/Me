@@ -9,19 +9,19 @@
 // @include foundation-grid;
 @include foundation-flex-grid;
 @include foundation-typography;
-@include foundation-button;
-@include foundation-forms;
+//@include foundation-button;
+//@include foundation-forms;
 // @include foundation-range-input;
 // @include foundation-accordion;
 // @include foundation-accordion-menu;
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
-@include foundation-button-group;
+//@include foundation-button-group;
 //@include foundation-callout;
-@include foundation-card;
-@include foundation-close-button;
-@include foundation-menu;
-@include foundation-menu-icon;
+//@include foundation-card;
+//@include foundation-close-button;
+//@include foundation-menu;
+//@include foundation-menu-icon;
 // @include foundation-drilldown-menu;
 // @include foundation-dropdown;
 // @include foundation-dropdown-menu;
@@ -48,8 +48,8 @@
 // @include foundation-float-classes;
 @include foundation-flex-classes;
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
+//@include motion-ui-transitions;
+//@include motion-ui-animations;
 
 
 // Custom CSS
@@ -57,4 +57,5 @@
 @import 'components/general';
 @import 'components/foundation-icons';
 @import 'components/hero';
+@import 'components/education';
 

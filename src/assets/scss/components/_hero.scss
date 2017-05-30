@@ -3,7 +3,7 @@
   background-color: rgba($black, 0.5);
   height: 100vh;
   padding-top: 25vh;
-  background: url("../img/hustle.jpg") center bottom no-repeat;
+  background: url("/assets/img/hustle.jpg") center bottom no-repeat;
   background-size: cover;
 
   &::before,
@@ -55,7 +55,7 @@
 }
 
 .scroll-down {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: calc(50vw - 55px / 2);
   transform: rotateZ(90deg);
