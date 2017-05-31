@@ -18,13 +18,13 @@ const tthDataURL = `https://teamtreehouse.com/${tthUser}.json`;
 $(document).ready(function () {
   $.getJSON(tthDataURL, function (res) {
     let badgesHTML = '<div class="row align-bottom">';
-    let colWidth = $(window).width() > 1024 ? '3' : '4';
+    // let colWidth = $(window).width() > 1024 ? '3' : '4';
     $.each(res, function (key, value) {
       if (key === 'points') {
         $.each(value, function (topic, points) {
           if (points > 1500 && topic !== 'total') {
             badgesHTML += `
-              <div class="small-${colWidth} columns tth__badged">
+              <div class="small-3 columns tth__badged">
                 <div class="tth__badged--title">
                   <h5>${topic}</h5>
                 </div>
