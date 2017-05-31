@@ -1,15 +1,28 @@
 /** TEAM TREE HOUSE BADGES STYLES **/
 
+
+.spin-anim{
+  animation: spin-rigth 2500ms linear infinite;
+}
+
 .tth{
   background-color: get-color(success);
   padding: 2rem 0;
+  &__brand{
+    background-color: $white;
+    border-radius: 2em;
+    margin-bottom: 2em;
+  }
   &__badged{
     margin-bottom: 1rem;
     &--image{
       width: 100%;
       height: 100px;
-      background: url("./assets/img/badges/sample-badge.png") no-repeat center;
+      background: url("../img/badges/sample-badge.png") no-repeat center;
       background-size: contain;
+    }
+    &--title{
+      text-transform: lowercase;
     }
   }
 }

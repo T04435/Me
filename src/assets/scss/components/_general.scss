@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   z-index: $level1;
-  background-color: get-color(warning);
+  background-color: rgba(get-color(warning), 0.5);
   text-align: center;
   padding: 1em;
   strong {
@@ -16,4 +16,22 @@
 .giveroom{
   padding-top: 100vh;
   text-align: center;
+}
+
+@keyframes rotate-front {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(-360deg);
+  }
+}
+
+@keyframes spin-rigth {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

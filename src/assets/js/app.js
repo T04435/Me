@@ -17,7 +17,7 @@ const tthDataURL = `https://teamtreehouse.com/${tthUser}.json`;
 
 $(document).ready(function () {
   $.getJSON(tthDataURL, function (res) {
-    let badgesHTML = '';
+    let badgesHTML = '<div class="row align-bottom">';
     let colWidth = $(window).width() > 1024 ? '3' : '4';
     $.each(res, function (key, value) {
       if (key === 'points') {
@@ -37,6 +37,7 @@ $(document).ready(function () {
         }); // end each on value
       }
     }); // end each on res
+    badgesHTML+= '</div>';
     $('#addTTHData').html(badgesHTML);
   }); // end getJSON
 }); // end ready

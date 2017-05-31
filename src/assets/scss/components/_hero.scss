@@ -1,14 +1,9 @@
 #hero {
   position: relative;
-  background-color: rgba($black, 0.5);
   height: 100vh;
   padding-top: 25vh;
-  background: url("/assets/img/hustle.jpg") center bottom no-repeat;
+  background: rgba($black, 0.5) url("../img/hustle.jpg") no-repeat center bottom;
   background-size: cover;
-
-  &::before,
-  &::after {
-  }
 
   .container {
     z-index: $level1;
@@ -58,33 +53,18 @@
   position: absolute;
   bottom: 0;
   left: calc(50vw - 55px / 2);
-  transform: rotateZ(90deg);
+  transform: rotate(90deg);
   i {
-    &:before {
-      color: $white;
-    }
+    color: $white;
   }
 }
 
-@keyframes rotate-front {
-  from {
-    transform: rotateX(0);
-  }
-  to {
-    transform: rotateX(-360deg);
-  }
-}
 
 @include breakpoint(medium) {
   #hero {
-    position: relative;
-    background-color: rgba($black, 0.5);
-    height: 100vh;
-    padding-top: 25vh;
     background-image: none;
-
     &::before,
-    &::after{
+    &::after {
       position: absolute;
       content: '';
       z-index: $levelB;
@@ -93,15 +73,13 @@
       height: 100%;
     }
     &::before {
-      background: url("../img/hustle.jpg") no-repeat;
+      background: url("../img/hustle.jpg") no-repeat -35vw;
       background-size: cover;
-      background-position: -50vw;
     }
 
     &::after {
-      background: url("../img/code.jpg") no-repeat;
+      background: url("../img/code.jpg") no-repeat 50vw;
       background-size: cover;
-      background-position: 50vw;
     }
   }
 }
