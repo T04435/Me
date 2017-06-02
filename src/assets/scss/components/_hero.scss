@@ -17,6 +17,9 @@
     transform-style: preserve-3d;
     animation: rotate-front 5000ms linear infinite;
     transition: all 1500ms;
+    @include breakpoint(landscape){
+      display: none;
+    }
     &:hover {
       animation: none;
     }

@@ -1,0 +1,58 @@
+/** TEAM TREE HOUSE BADGES STYLES **/
+
+.spin-anim {
+  animation: spin-rigth 2500ms linear infinite;
+}
+
+#education {
+  & [class$="__brand"] {
+    box-shadow: 0px 0px 8px $black;
+    border-radius: 2em;
+    margin-bottom: 2em;
+    overflow: hidden;
+  }
+}
+
+.tth {
+  position: relative;
+  background-color: $brand-tth;
+  padding: 2em;
+  &__brand {
+    background-color: $white;
+  }
+  &__badged {
+    margin-bottom: 1rem;
+    &:hover > &--image {
+      transform: scale(1.75, 1.75) rotateY(720deg);
+      perspective: 800px;
+      perspective-origin: top;
+      @include breakpoint(medium) {
+        transform: scale(1.75, 1.75) translateX(-25px) rotateY(720deg);
+      }
+    }
+    &--image {
+      margin: 0 auto;
+      transition: all 500ms linear;
+      img {
+        width: 75%;
+        height: auto;
+        @include breakpoint(medium) {
+          width: 35%;
+        }
+      }
+    }
+    &--title {
+      text-transform: lowercase;
+    }
+  }
+}
+
+.wsu {
+  padding: 2em;
+  background-color: $brand-wsu;
+  color: $black;
+  a {
+    color: $white;
+  }
+}
+

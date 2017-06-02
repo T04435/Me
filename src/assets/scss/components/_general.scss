@@ -13,9 +13,19 @@
   }
 }
 
-.giveroom{
+.giveroom {
   padding-top: 100vh;
   text-align: center;
+}
+
+.footer-note {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.75em;
+}
+
+section .title {
+  padding: 2em;
 }
 
 @keyframes rotate-front {
@@ -33,5 +43,32 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  * {
+    display: none !important;
+  }
+  html,
+  body {
+    display: block !important;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background: get-color(alert) none;
+  }
+  body:before {
+    position: absolute;
+    content: 'Please rotate device for better UX';
+    font-family: $header-font-family;
+    font-size: 1.25rem;
+    top: 45vh;
+    left: 20%;
+    border: 2px solid;
+    padding: 0.5rem 1.25rem;
+    border-radius: 1em;
+
   }
 }

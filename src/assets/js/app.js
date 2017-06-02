@@ -2,18 +2,7 @@ $(document).foundation();
 
 const tthUser = 'fideltorres';
 const tthDataURL = `https://teamtreehouse.com/${tthUser}.json`;
-/**
- * badge HTML template
- * <div class="small-4 columns tth__badged">
- *   <div class="tth__badged--image"></div>// add BG image based on topic URL ./assets/img/badges/TOPIC.png
- *   <div class="tth__badged--value">
- *     <p>VALUE</p>// add value
- *   </div>
- *   <div class="tth__badged--title">
- *     <h5>TOPIC</h5>// ADD TOPIC
- *   </div>
- * </div>
- */
+
 
 $(document).ready(function () {
   $.getJSON(tthDataURL, function (res) {
@@ -28,9 +17,11 @@ $(document).ready(function () {
                 <div class="tth__badged--title">
                   <h5>${topic}</h5>
                 </div>
-                <div class="tth__badged--image" style="background-image: url('./assets/img/badges/${topic.split(' ').join('_').toLowerCase()}.png')"></div>
+                <div class="tth__badged--image">
+                  <img src="./assets/img/badges/${topic.split(' ').join('_').toLowerCase()}.png" alt="Team Tree House ${topic} Badged"/>
+                </div>
                 <div class="tth__badged--value">
-                  <p>${points} XP</p>
+                  <p>${points} pts</p>
                 </div>
               </div>`
           }
@@ -39,5 +30,9 @@ $(document).ready(function () {
     }); // end each on res
     badgesHTML+= '</div>';
     $('#addTTHData').html(badgesHTML);
-  }); // end getJSON
+  })
+    .fail(function () {
+      $('#addTTHData').html('<h6> Please check Profile name</h6>');
+    }); // end getJSON
 }); // end ready
+
