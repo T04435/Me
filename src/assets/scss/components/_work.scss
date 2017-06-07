@@ -1,21 +1,29 @@
 #portfolio {
   background-color: get-color(warning);
+  padding-bottom: 3em;
 }
 
 .work {
   &__tags {
     margin-bottom: 2em;
     span {
+      display: inline-block;
       padding: 0.25em 1em;
-      margin: 2em 0.25em;
+      margin: 0.25em;
       border-radius: 1em;
-      color: get-color(warning);
-      background-color: $black;
       text-transform: uppercase;
       font-variant: small-caps;
       font-weight: bold;
+      background-color: transparent;
+      border: 2px solid $black;
+      color: $black;
       &:hover {
         cursor: pointer;
+      }
+      &.selected{
+        color: get-color(warning);
+        background-color: $black;
+        box-shadow: 0px 4px 5px rgba($black, 0.75);
       }
     }
   }
@@ -27,7 +35,6 @@
       height: 0;
       transition: all 300ms linear;
     }
-
     &--title,
     &--link {
       position: absolute;

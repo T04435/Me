@@ -28,11 +28,66 @@ $(document).ready(function () {
         }); // end each on value
       }
     }); // end each on res
-    badgesHTML+= '</div>';
+    badgesHTML += '</div>';
     $('#addTTHData').html(badgesHTML);
   })
     .fail(function () {
       $('#addTTHData').html('<h6> Please check Profile name</h6>');
     }); // end getJSON
+
+
 }); // end ready
 
+$(document).ready(function () {//ES6 code for demonstrations proposes
+
+//get all work__item elements
+  const portfolioItems = document.querySelectorAll('#portfolio .work__item');
+//get their 'data-tag' attr value into array
+  let tagsAll = [];
+  for (const item of portfolioItems) {// iterate over each item
+    for (const tag of item.getAttribute('data-tag').split(' ')) {// iterate over each tag attr
+      tagsAll.push(tag);
+    }
+  }
+//clean array from duplicates
+  const tags = Array.from(new Set(tagsAll));
+//add new tags to #tags
+  const tagFilter = document.querySelector('#tags');
+  let tagsHTML = `<span class="selected">all</span>`;
+  for (const newTag of tags) {
+    tagsHTML += `<span>${newTag}</span>`;
+  }
+  tagFilter.innerHTML = tagsHTML;
+  // filter the portfolio
+  tagFilter.addEventListener('click', (event) => {
+    filterPortfolio(event.target);
+  });
+});
+
+const filterPortfolio = filter => {
+  const myWork = document.querySelectorAll('#portfolio .work__item');
+
+  // remove class selected [only one item will be .selected at any time]
+  for (const item of filter.parentNode.childNodes) {
+    if (item.classList.contains('selected')) {
+      item.classList.remove('selected');
+      break;
+    }
+  }
+  // add selected to filter
+  filter.classList.add('selected');
+
+  for (const item of myWork) {// iterate over each item
+    let hasTag = false;
+    for (const tag of item.getAttribute('data-tag').split(' ')) {// iterate over each tag attr
+      if(tag == filter.innerHTML || filter.innerHTML == 'all'){
+        hasTag = true;
+        $(item).fadeIn();
+      }
+    }
+    if(!hasTag){
+        $(item).fadeOut();
+    }
+  }
+
+}
