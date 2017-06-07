@@ -1,0 +1,80 @@
+#portfolio {
+  background-color: get-color(warning);
+}
+
+.work {
+  &__tags {
+    margin-bottom: 2em;
+    span {
+      padding: 0.25em 1em;
+      margin: 2em 0.25em;
+      border-radius: 1em;
+      color: get-color(warning);
+      background-color: $black;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    overflow: hidden;
+    &:before {
+      content: '';
+      height: 0;
+      transition: all 300ms linear;
+    }
+
+    &--title,
+    &--link {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      color: get-color(warning);
+    }
+    &--title {
+      top: 25%;
+      left: -100%;
+    }
+    &--link {
+      right: -100%;
+      width: 50%;
+      bottom: 25%;
+      padding: 0.25em 1em;
+      border-radius: 1em;
+      border: 2px solid get-color(warning);
+      text-transform: uppercase;
+      font-variant: small-caps;
+      font-weight: bold;
+      &:hover {
+        border: none;
+        background-color: get-color(warning);
+        border-radius: 2px;
+        color: $black;
+      }
+    }
+
+    &:hover {
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($black, 0.95);
+      }
+    }
+
+    &:hover > &--link {
+      right: 25%;
+    }
+    &:hover > &--title {
+      left: 0;
+    }
+  }
+}

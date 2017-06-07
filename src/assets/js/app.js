@@ -21,7 +21,7 @@ $(document).ready(function () {
                   <img src="./assets/img/badges/${topic.split(' ').join('_').toLowerCase()}.png" alt="Team Tree House ${topic} Badged"/>
                 </div>
                 <div class="tth__badged--value">
-                  <p>${points} pts</p>
+                  <p>${points}</p>
                 </div>
               </div>`
           }

@@ -11,7 +11,7 @@
 </head>
 <body>
 <span
-    id="under-dev"><strong>T04435: </strong> Hi there, thanks for checking out my work. <strong>Status: development</strong></span>
+    id="under-dev"><strong>T04435: </strong> Hi there, thanks for checking out my work. <br><strong>Status: working on filter for My Work section</strong></span>
 <section id="hero">
   <div class="row">
     <div class="columns text-center container">
@@ -36,15 +36,10 @@
   <a href="#education" class="scroll-down"><i class="fi-play-circle size-72"></i></a>
 </section>
 <section id="education">
-  <div class="row text-center">
-    <div class="small-12 title">
-      <h1>Education</h1>
-    </div>
-  </div>
   <div class="row wsu expanded text-center align-center-middle">
     <div class="small-4 medium-3 medium-order-1 wsu__brand">
       <a href="https://www.westernsydney.edu.au/">
-        <img src="./assets/img/wsu_logo.jpg" alt="Western Sydney University Logo">
+        <img src="../assets/img/wsu_logo.jpg" alt="Western Sydney University Logo">
       </a>
     </div>
     <div class="small-12 medium-8 wsu__course">
@@ -63,10 +58,10 @@
     </div>
   </div>
   <div class="row align-center text-center expanded tth">
-    <p class="footer-note">*Only Loading Topics with 1500+ Points(pts)</p>
+    <p class="footer-note">*Only Loading Topics with 1500+ Points</p>
     <div class="small-4 medium-3 tth__brand">
       <a href="https://teamtreehouse.com/fideltorres">
-        <img src="./assets/img/tth_logo.png" alt="Team Tree House Logo">
+        <img src="../assets/img/tth_logo.png" alt="Team Tree House Logo">
       </a>
     </div>
     <div id="addTTHData" class="small-12 medium-8">
@@ -89,7 +84,57 @@
     </div>
   </div>
 </section>
-<div class="giveroom">Room Given</div>
+<section id="portfolio">
+  <div class="row text-center">
+    <div class="small-12 title">
+      <h1>My Work</h1>
+    </div>
+  </div>
+  <div class="row expanded work">
+    <div class="small-12 medium-expanded text-center work__tags" id="tags">
+      <span>all</span>
+      <span>wordpress</span>
+      <span>php</span>
+      <span>javascript</span>
+    </div>
+    <div class="small-12-medium-4 large-3 work__item" data-tag="wordpress html css">
+      <h3 class="work__item--title">Kristian Taylor IT Solutions</h3>
+      <img src="../assets/img/work/kristian-taylor.png" alt="Kristian Taylor IT Solutions" class="work__item--img">
+      <a href="http://www.kristiantaylor.com/" target="_blank" class="work__item--link">live site</a>
+    </div>
+    <div class="small-12-medium-4 large-3 work__item" data-tag="wordpress html css">
+        <h3 class="work__item--title">KC Consulting Systems</h3>
+        <img src="../assets/img/work/KCCS.png" alt="KC Consulting Systems" class="work__item--img">
+        <a href="http://kcconsultingbrisbane.com.au/" target="_blank" class="work__item--link">live site</a>
+    </div>
+    <div class="small-12-medium-4 large-3 work__item" data-tag="wordpress html css">
+        <h3 class="work__item--title">Péclet Technology</h3>
+        <img src="../assets/img/work/peclet.png" alt="Péclet Technology" class="work__item--img">
+        <a href="http://www.peclet.com.au/" target="_blank" class="work__item--link">live site</a>
+    </div>
+    <div class="small-12-medium-4 large-3 work__item" data-tag="wordpress html css">
+        <h3 class="work__item--title">Prosper</h3>
+        <img src="../assets/img/work/prosper.png" alt="Prosper" class="work__item--img">
+        <a href="http://www.prosperaustralia.org/" target="_blank" class="work__item--link">live site</a>
+    </div>
+    <div class="small-12-medium-4 large-3 work__item" data-tag="wordpress html css">
+        <h3 class="work__item--title">Territory Sports Medicine</h3>
+        <img src="../assets/img/work/sports-med.png" alt="Territory Sports Medicine" class="work__item--img">
+        <a href="http://www.territorysportsmed.com.au/" target="_blank" class="work__item--link">live site</a>
+    </div>
+    <div class="small-12-medium-4 large-3 work__item" data-tag="php foundation_zurb javascript css">
+        <h3 class="work__item--title">siteXcell</h3>
+        <img src="../assets/img/work/siteXcell.png" alt="Territory Sports Medicine" class="work__item--img">
+        <a href="http://www.sitexcell.com.au/" target="_blank" class="work__item--link">live site</a>
+    </div>
+    <div class="small-12-medium-4 large-3 work__item" data-tag="html css bootstrap">
+        <h3 class="work__item--title">Mann Street Apartment</h3>
+        <img src="../assets/img/work/armidaleRent.png" alt="Mann Street Apartment" class="work__item--img">
+        <a href="http://mannstreetapartments.net.au/" target="_blank" class="work__item--link">live site</a>
+    </div>
+  </div>
+</section>
+<div class="giveroom">Room Given to allow scrolling after content. Only while STATUS === DEV.</div>
 <script src="assets/js/app.js"></script>
 </body>
 </html>
