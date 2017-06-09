@@ -2,7 +2,7 @@ $(document).foundation();
 
 const tthUser = 'fideltorres';
 const tthDataURL = `https://teamtreehouse.com/${tthUser}.json`;
-
+const zapierHook = 'https://hooks.zapier.com/hooks/catch/2296246/9fg041/';
 
 $(document).ready(function () {
   $.getJSON(tthDataURL, function (res) {
@@ -54,7 +54,7 @@ $(document).ready(function () {//ES6 code for demonstrations proposes
 //add new tags to #tags
   const tagFilter = document.querySelector('#tags');
   let tagsHTML = `<span class="selected">all</span>`;
-  for (const newTag of tags) {
+  for (const newTag of tags.sort()) {
     tagsHTML += `<span>${newTag}</span>`;
   }
   tagFilter.innerHTML = tagsHTML;
@@ -77,17 +77,16 @@ const filterPortfolio = filter => {
   // add selected to filter
   filter.classList.add('selected');
 
-  for (const item of myWork) {// iterate over each item
+  for (const workItem of myWork) {
     let hasTag = false;
-    for (const tag of item.getAttribute('data-tag').split(' ')) {// iterate over each tag attr
-      if(tag == filter.innerHTML || filter.innerHTML == 'all'){
+    for (const tag of workItem.getAttribute('data-tag').split(' ')) {// iterate over each tag attr
+      if (tag == filter.innerHTML || filter.innerHTML == 'all') {
         hasTag = true;
-        $(item).fadeIn();
+        Foundation.Motion.animateIn(workItem, 'scale-in-up');
       }
     }
-    if(!hasTag){
-        $(item).fadeOut();
+    if (!hasTag) {
+      Foundation.Motion.animateOut(workItem, 'scale-out-down');
     }
   }
-
 }
